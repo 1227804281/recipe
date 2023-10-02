@@ -1,0 +1,914 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul,
+menu {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* End of CSS reset */
+/* My Code Now */
+
+/* general */
+
+html {
+    background-color: rgba(122, 191, 191, .5);
+    color: #0d0d0d;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+body {
+    width: 414px;
+    margin: 0 auto;
+    background-color: #F2f2f2;
+}
+
+h1 {
+    display: none;
+}
+
+h2,
+nav a,
+nav span,
+menu li,
+#social li,
+footer {
+    font-family: 'Bebas Neue', Arial, sans-serif;
+}
+
+
+h2 {
+    font-size: 40px;
+    text-align: center;
+    padding: 10px;
+    margin-top: 170px;
+}
+
+a {
+    color: #EB5428;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+menu {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 3fr;
+    margin-left: 30px;
+    padding-bottom: 10px;
+}
+
+menu a,
+.main a,
+footer a {
+    display: inline-flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    transition: filter .2s ease-out;
+}
+
+menu a:hover .drop,
+footer a:hover .drop {
+    filter: drop-shadow(1px 1px 1px rgb(134, 182, 196));
+}
+
+#street-tacos {
+    width: 414px;
+}
+
+p,
+ol li {
+    line-height: 1.5;
+    padding: 10px;
+}
+
+ol {
+    list-style-type: decimal;
+    margin-left: 25px;
+}
+
+#ingredients li {
+    padding: 10px;
+    margin-left: 25px;
+}
+
+h3 {
+    font-family: 'Bebas Neue', Arial, sans-serif;
+    font-size: 30px;
+    text-align: center;
+    padding: 10px;
+}
+
+#details p {
+    line-height: 1;
+    padding: 5px;
+}
+
+.first {
+    font-weight: 700;
+    padding-right: 10px;
+}
+
+#ingredients ul {
+    list-style-type: square;
+}
+
+/* aside */
+
+aside {
+    background-color: #7ABFBF;
+    margin-bottom: 20px;
+}
+
+aside h3 {
+    padding-bottom: 20px;
+}
+
+aside div {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    padding: 20px 10px 10px 10px;
+}
+
+dd img {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    margin-top: -35px;
+}
+
+dt {
+    font-family: 'Bebas Neue', Arial, sans-serif;
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+
+dt,
+.description,
+.rating {
+    margin-left: 100px;
+}
+
+.rating {
+    padding: 7px 0;
+    font-weight: 700;
+}
+
+.star {
+    margin-left: 85px;
+}
+
+.star svg {
+    padding: 0 5px;
+}
+
+.orange {
+    fill: #EB5428;
+}
+
+/* main nav */
+
+.main {
+    position: fixed;
+    top: 0;
+    height: 76px;
+    background-color: #ffffff;
+    max-height: fit-content;
+    width: 414px;
+    filter: drop-shadow(0 5px 3px grey);
+    z-index: 99;
+}
+
+.main ul {
+    overflow: hidden;
+    list-style: none;
+    background-color: #F2f2f2;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+.main li a {
+    padding: 20px;
+}
+
+.main h2 {
+    display: none;
+}
+
+.main img {
+    width: 50px;
+    height: 50px;
+}
+
+#home,
+#sign {
+    position: absolute;
+    top: 0;
+}
+
+#home {
+    background-color: #EB5428;
+    left: 85px;
+    width: 240px;
+    height: 76px;
+    padding: 0;
+    transition: background-color .2s ease-out;
+}
+
+#sign {
+    color: #0d0d0d;
+    left: 330px;
+    padding: 10px 0 0 5px;
+}
+
+#sign svg {
+    stroke: #EB5428;
+}
+
+#home span {
+    display: none;
+}
+
+#home svg {
+    padding-bottom: 10px;
+}
+
+nav label {
+    cursor: pointer;
+    display: inline-flex;
+    width: 85px;
+    font-size: 20px;
+    padding: 10px 0 5px 0;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    user-select: none;
+}
+
+nav label .drop,
+nav a .drop {
+    transition: filter .2s ease-out;
+}
+
+nav label:hover .drop,
+nav a:hover .drop {
+    filter: drop-shadow(1px 1px 1px rgb(194, 165, 141))
+}
+
+#home:hover {
+    background-color: #7ABFBF;
+}
+
+.main input:checked~ul {
+    max-height: 110px;
+    display: flex;
+    overflow: scroll;
+}
+
+nav input {
+    display: none;
+}
+
+/* search */
+
+#search {
+    background-color: #F2f2f2;
+    display: flex;
+    align-items: center;
+    width: 414px;
+    height: 100px;
+    position: absolute;
+    top: 76px;
+}
+
+#search input {
+    width: 250px;
+    height: 42px;
+    margin-left: 50px;
+    border: 2px solid #EB5428;
+}
+
+#search button {
+    padding: 0 5px;
+    height: 42px;
+    background-color: #EB5428;
+    border: 2px solid #EB5428;
+    transition: background-color .2s ease-out,
+        border .2s ease-out;
+}
+
+#search svg {
+    stroke: #F2f2f2;
+}
+
+#search button:hover {
+    background-color: #7ABFBF;
+    border: 2px solid #7ABFBF;
+}
+
+/* Footer & Connect */
+
+footer {
+    background-color: #ffffff;
+}
+
+footer h2 {
+    margin-top: 0;
+    display: none;
+}
+
+footer h3 {
+    display: none;
+}
+
+footer ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-left: 30px;
+}
+
+footer li {
+    padding-top: 40px;
+}
+
+footer img {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    margin-top: -270px;
+    margin-left: 100px;
+}
+
+.bottom {
+    margin-top: 250px;
+}
+
+small {
+    font-size: 20px;
+    position: relative;
+    display: block;
+    text-align: center;
+}
+
+
+/* media querie now */
+
+@media screen and (min-width:768px) {
+
+    body,
+    .main {
+        width: 768px;
+    }
+
+    h2 {
+        text-align: left;
+        padding: 30px 10px 10px 10px;
+        margin-top: 200px;
+    }
+
+    nav label,
+    nav input {
+        display: none;
+    }
+
+    .main {
+        height: 200px;
+    }
+
+    #home {
+        left: 0px;
+        width: 80px;
+        height: 80px;
+        padding: 0;
+    }
+
+    #sign {
+        left: 700px;
+        padding: 10px 0 0 5px;
+    }
+
+    #in {
+        padding: 0;
+    }
+
+    .up {
+        display: none;
+    }
+
+    .main img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .drop {
+        padding-top: 5px;
+    }
+
+    .main ul {
+        overflow: visible;
+        display: flex;
+        list-style: none;
+        background-color: #F2f2f2;
+        margin-top: 80px;
+    }
+
+    .main li a {
+        padding: 20px 25px 20px 20px;
+    }
+    
+    #search {
+        z-index: 100;
+        background-color: transparent;
+        position: fixed;
+        height: 50px;
+        width: fit-content;
+        top: 15px;
+    }
+
+    #search input {
+        margin-left: 370px;
+    }
+
+    #background {
+        background-color: rgba(242, 242, 242, 0.70);
+        width: 768px;
+        height: 80px;
+        position: absolute;
+        overflow: hidden;
+        margin-left: 0;
+        padding-top: 10px;
+    }
+
+    menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding-bottom: 20px;
+        margin-left: 50px;
+    }
+
+    menu li {
+        padding: 0 35px;
+    }
+
+    #street-tacos {
+        width: 768px;
+    }
+
+    #details {
+        text-align: center;
+    }
+
+    #mid {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #ingredients {
+        min-width: 250px;
+    }
+
+    dl {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    aside {
+        margin: 0;
+    }
+
+    aside div {
+        width: 350px;
+    }
+
+    .star {
+        margin-left: 160px;
+        margin-top: -25px;
+    }
+
+    footer ul {
+        margin-left: 370px;
+    }
+
+    footer li {
+        padding: 40px 10px 0 10px;
+    }
+
+    footer img {
+        position: absolute;
+        margin-top: -280px;
+        margin-left: 90px;
+    }
+
+    small {
+        position: relative;
+        display: block;
+        text-align: center;
+        margin-left: -400px;
+    }
+
+    #small {
+        padding-bottom: 15px;
+    }
+
+    .bottom {
+        margin-top: 160px;
+    }
+
+}
+
+@media screen and (min-width:1280px) {
+
+    body,
+    .main {
+        width: 1280px;
+    }
+
+    h2 {
+        text-align: center;
+        padding: 30px 10px 10px 10px;
+        margin-top: 207px;
+    }
+
+    #background {
+        background-color: #ffffff;
+        width: 120px;
+        height: 746px;
+        border: 2px solid #EB5428;
+        position: static;
+        padding: 0;
+        margin: 0;
+    }
+
+    menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 30px 0 0 0;
+    }
+
+    menu li {
+        padding: 10px;
+        margin: 0;
+    }
+
+    #large {
+        display: grid;
+        grid-template-columns: 1fr 2fr 3fr;
+    }
+
+    #street-tacos {
+        width: 500px;
+        margin-left: -89px;
+    }
+
+    #gen {
+        margin-left: -15px;
+    }
+
+    .main {
+        height: 120px;
+    }
+
+    #home {
+        width: 120px;
+        height: 120px;
+    }
+
+    #home svg {
+        padding-bottom: 30px;
+    }
+
+    .main ul {
+        background-color: #F2f2f2;
+        margin: 0 0 0 250px;
+    }
+
+    #sign {
+        left: 1200px;
+        padding: 30px 0 0 5px;
+    }
+
+    #search {
+        background-color: #F2f2f2;
+        display: flex;
+        align-items: center;
+        width: 1280px;
+        height: 100px;
+        position: absolute;
+        top: 120px;
+        padding-top: 20px;
+        z-index: 1;
+    }
+
+    #search input {
+        margin-left: 500px;
+    }
+
+    #details {
+        color: #7ABFBF;
+        background-color: #0d0d0d;
+        height: 100px;
+    }
+
+    #fun {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    #details p {
+        padding: 0;
+    }
+
+    .first {
+        padding: 10px 0 0 0;
+    }
+
+    p span {
+        display: block;
+    }
+
+    aside div {
+        width: 300px;
+        height: 380px;
+    }
+
+    dd img {
+        position: absolute;
+        height: 250px;
+        width: 250px;
+        margin-top: -305px;
+        margin-left: 20px;
+    }
+
+
+    dt,
+    .description,
+    .rating {
+        margin: 0 0 0 30px;
+        position: relative;
+    }
+
+    .description {
+        padding: 5px 40px 0 0;
+    }
+
+    .rating {
+        padding-top: 20px;
+    }
+
+    .star {
+        margin-left: 87px;
+        margin-top: -25px;
+    }
+
+    dt {
+        margin-top: 250px;
+    }
+
+    footer {
+        height: 300px;
+    }
+
+    footer ul {
+        margin-left: 550px;
+    }
+
+    footer li {
+        padding: 40px 0 0 70px;
+        z-index: 50;
+    }
+
+    footer img {
+        position: absolute;
+        margin-top: -80px;
+        margin-left: 10px;
+    }
+
+    #copy {
+        margin: -200px 0 0 -345px;
+    }
+
+    #small {
+        padding-bottom: 15px;
+    }
+
+    .bottom {
+        margin-top: 160px;
+    }
+}
+
+@media print {
+    html {
+        background-color: white;
+    }
+
+    body {
+        background-color: white;
+        color: black;
+        
+        width: 6.5in;
+        filter: grayscale(1);
+        font-family: 'Times New Roman', sans-serif;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 30px;
+        padding: 5px;
+    }
+
+    h2,
+    h3,
+    small,
+    dt {
+        font-family: 'Times New Roman', sans-serif;
+    }
+
+    #street-tacos {
+        width: 170px;
+        float: left;
+        padding: 10px;
+    }
+
+    #print {
+        display: flex;
+    }
+
+    #mid {
+        display: flex;
+    }
+
+    #details,
+    #ingredients {
+        width: 2in;
+    }
+
+    #directions {
+        width: 3in;
+    }
+
+    #details span {
+        display: block;
+        text-align: center;
+    }
+
+    #directions li,
+    #ingredients li {
+        padding: 5px;
+    }
+
+    .bottom {
+        margin: 10px 0 0 0;
+    }
+
+    small {
+        font-size: 15px;
+    }
+
+    nav,
+    menu,
+    .bottom img,
+    #search,
+    aside {
+        display: none;
+    }
+
+    @page {
+        margin: 0.5in;
+    }
+}
